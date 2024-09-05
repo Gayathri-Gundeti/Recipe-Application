@@ -1,0 +1,19 @@
+#background{
+    background-image: url("../../../public/images/background.jpg");
+    background-size: cover;
+    height: 100vh;
+}
+#app-title{
+    font-size: 45px;
+    color: orange;
+    text-align: center;
+    font-family: bodoni bd bt;
+}
+#btns button{
+    background-color: orange;
+    color: white;
+    margin-left: 10px;
+}
+#btns{
+    text-align: center;
+}

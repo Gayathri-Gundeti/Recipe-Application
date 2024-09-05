@@ -1,0 +1,16 @@
+#box-setting{
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 20px;
+}
+#btn-back{
+    background-color: orange;
+    color: white;
+}
+#recipe-title{
+    color: orange;
+}

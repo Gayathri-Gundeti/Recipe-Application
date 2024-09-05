@@ -1,0 +1,6 @@
+#mobile-error:focus ~ .text-danger {
+    display: block;
+}
+#mobile-error:valid ~ .text-danger {
+    display: none;
+}

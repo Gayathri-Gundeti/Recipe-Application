@@ -1,0 +1,18 @@
+#cards-section{
+    display: flex;
+    flex-wrap: wrap;
+}
+#btnAddRecipe{
+    border: 1px solid orange;
+}
+#btnAddRecipe:hover{
+    background-color: orange;
+    color: white;
+}
+#admin-card{
+    width: 250px;
+}
+.bi-person-circle{
+    color: orange;
+    font-size: 22px;
+}
