@@ -8,9 +8,9 @@
     border-radius: 20px;
 }
 #btn-back{
-    background-color: orange;
-    color: white;
+    background-color: rgb(3, 147, 15);
+    color: #FDD365;
 }
 #recipe-title{
-    color: orange;
+    color: rgb(3, 147, 15);
 }

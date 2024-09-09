@@ -3,16 +3,17 @@
     flex-wrap: wrap;
 }
 #btnAddRecipe{
-    border: 1px solid orange;
+    border: 1px solid rgba(48,181,59,1);
+    color: rgba(48,181,59,1);
 }
 #btnAddRecipe:hover{
-    background-color: orange;
-    color: white;
+    background-color: rgb(3, 147, 15);
+    color: #FDD365;
 }
 #admin-card{
     width: 250px;
 }
 .bi-person-circle{
-    color: orange;
+    color: rgba(48,181,59,1);
     font-size: 22px;
 }

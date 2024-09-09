@@ -1,18 +1,22 @@
 #background{
-    background-image: url("../../../public/images/background.jpg");
+    background-image: url("../../../public/images/bg-new.jpg");
     background-size: cover;
     height: 100vh;
 }
 #app-title{
     font-size: 45px;
-    color: orange;
+    color: #009B4D;
     text-align: center;
     font-family: bodoni bd bt;
 }
 #btns button{
-    background-color: orange;
-    color: white;
+    /* background: radial-gradient(#FDD365 50% , rgba(48,181,59,1) 100%); */
+    background-color: rgb(3, 147, 15);
+    color: #FDD365;
     margin-left: 10px;
+    border-radius: 20px;
+    font-size: 15px;
+    padding: 5px 20px;
 }
 #btns{
     text-align: center;

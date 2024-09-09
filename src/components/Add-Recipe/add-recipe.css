@@ -1,4 +1,11 @@
 #btnSubmit{
-    background-color: orange;
-    color: white;
+    background-color: rgba(48,181,59,1);
+    color: #FDD365;
+}
+#btnSubmit:hover{
+    background-color: rgb(3, 147, 15);
+    color: #FDD365;
+}
+#add-title{
+    color: rgba(48,181,59,1);
 }

@@ -4,10 +4,10 @@ header {
     z-index: 1;  
 }
 header h3{
-    color: orange;
+    color: rgba(48,181,59,1);
     font-family: monotype corsiva;
-    text-decoration: underline;
-    font-size: 35px;
+    /* text-decoration: underline; */
+    font-size: 40px;
     
 }
 #nav-items{
@@ -15,8 +15,12 @@ header h3{
     top:100px;
 }
 #btnlogout{
-    background-color: orange;
-    color: white;
+    background-color: rgba(48,181,59,1);
+    color: #FDD365;
+}
+#btnlogout:hover{
+    background-color: rgb(3, 147, 15);
+    color: #FDD365;
 }
 
 #card-space{
@@ -30,25 +34,26 @@ header h3{
     
 }
 #nav-items div{
-    background-color: orange;
+    background-color: rgba(48,181,59,1);
+    color: #FDD365;
     margin-top: 8px;
     padding: 8px;
     font-size: 18px;
 } 
 #nav-items div:hover{
-    background-color: rgb(239, 135, 7);
+    background-color: rgb(3, 147, 15);
     
 } 
 #title-user{
-    color:orange;
+    color:rgba(48,181,59,1);
 }
 #btn-viewmore{
-    background-color: orange;
-    color: white;
+    background-color: rgba(48,181,59,1);
+    color: #FDD365;
 }
 #btn-viewmore:hover{
-    background-color: rgb(239, 135, 7);
-    color: white;
+    background-color: rgb(3, 147, 15);
+    color: #FDD365;
 }
 #cards-section{
     display: flex;

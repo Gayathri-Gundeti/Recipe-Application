@@ -1,13 +1,13 @@
 #login-title{
     text-align: center;
-    color: orange;
+    color: rgba(48,181,59,1);
 }
 #btnLogin{
  
-    background-color: orange;
-    color: white;
+    background-color: rgba(48,181,59,1);
+    color: #FDD365;
 }
 #btnCancel{
-    background-color: orange;
-    color: white;
+    background-color: rgba(48,181,59,1);
+    color: #FDD365;
 }

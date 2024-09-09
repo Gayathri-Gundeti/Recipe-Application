@@ -3,6 +3,8 @@ import axios from "axios";
 import "./user-recipe-page.css";
 import { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
+import recipeIcon from "../../assets/icon.webp";
+
 export function UserRecipePage(){
     let navigate=useNavigate();
     const[cookies,setCookie,removeCookie]=useCookies(["username"]);
@@ -23,13 +25,14 @@ export function UserRecipePage(){
         .then(response=>{
             setSearchData(response.data);
             setDisplayNone({display:"none"});
+            setInputTxt("");
             
             
         })
     }
     function InputChange(e){
         setInputTxt(e.target.value.charAt(0).toUpperCase());
-
+        
     }
     function handleHome(){
         LoadCards();
@@ -60,7 +63,8 @@ export function UserRecipePage(){
         <div>
             <header className="bg-light p-3  d-flex justify-content-between">
                 <div>
-                <h3>Foodie</h3>
+                   
+                <h3>  <img src={recipeIcon} height="50px" width="50px"/>RecipeGuide</h3>
                 </div>
                 <div>
                 <span className="h4 me-2 bi bi-person-circle" id="title-user">&nbsp;User:</span><span className="h4 me-4">{cookies["username"]}</span>

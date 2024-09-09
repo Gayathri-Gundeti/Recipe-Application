@@ -50,7 +50,7 @@ export function AddRecipe() {
             <div className="d-flex justify-content-center align-items-center" style={{ height: "100vh" }}>
                 <form className="bg-light p-3 rounded-3 w-25" onSubmit={formik.handleSubmit}>
                     <dl>
-                        <h3 className="text-center " style={{ color: "orange" }}>Add Recipe</h3>
+                        <h3 className="text-center " id="add-title">Add Recipe</h3>
                         <dd><input type="number" placeholder="Enter Id" className="form-control" name="id" onChange={formik.handleChange} /></dd>
                         <dd><input type="text" placeholder="Enter Title" className="form-control" name="title" onChange={formik.handleChange} /></dd>
                         <dd><input type="text" placeholder="Enter Course" className="form-control" name="course" onChange={formik.handleChange} /></dd>
