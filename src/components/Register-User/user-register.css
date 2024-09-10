@@ -4,3 +4,27 @@
 #mobile-error:valid ~ .text-danger {
     display: none;
 }
+#container-width{
+    width: 30%;
+}
+
+@media screen and (max-width:992px){
+    #container-width{
+        width: 50%;
+    }
+}
+@media screen and (max-width:768px){
+    #container-width{
+        width: 60%;
+    }
+}
+@media screen and (max-width:568px){
+    #container-width{
+        width: 80%;
+    }
+}
+@media screen and (max-width:399px){
+    #container-width{
+        width: 80%;
+    }
+}

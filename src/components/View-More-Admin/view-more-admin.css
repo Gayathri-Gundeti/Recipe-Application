@@ -1,3 +1,7 @@
+#header-right button{
+    margin-left: 10px;
+}
+
 #box-setting{
     width: 50%;
     margin: auto;
@@ -8,9 +12,9 @@
     border-radius: 20px;
 }
 #btn-back{
-    background-color: rgb(3, 147, 15);
-    color: #FDD365;
+    background-color: orange;
+    color: white
 }
 #recipe-title{
-    color: rgb(3, 147, 15);
+    color:orange;
 }

@@ -1,20 +1,18 @@
 #login-title{
-    color: rgba(48,181,59,1);
+    color: orange;
 }
 #btnLogin{
  
-    background-color: rgba(48,181,59,1);
-    color: #FDD365;
+    background-color:orange;
+    color:white;
 }
 #btnLogin:hover{
-    background-color: rgb(3, 147, 15);
-    color: #FDD365;
+    transform: scale(1.05);
 }
 #btnCancel{
-    background-color: rgba(48,181,59,1);
-    color: #FDD365;
+    background-color:orange;
+    color:white;
 }
 #btnCancel:hover{
-    background-color: rgb(3, 147, 15);
-    color: #FDD365;
+    transform: scale(1.05);
 }

@@ -3,8 +3,10 @@ import "./user-login.css";
 import { Formik, useFormik } from "formik";
 import axios from "axios";
 import { useCookies } from "react-cookie";
+import { useState } from "react";
 
 export function UserLogin(){
+    const[loading,setLoading]=useState("");
     let navigate=useNavigate();
     const[cookies,setCookie,removeCookie]=useCookies(["username"]);
     const formik=useFormik({
@@ -13,30 +15,39 @@ export function UserLogin(){
             Password:""
         },
         onSubmit:(user)=>{
-            axios.get("http://127.0.0.1:2233/get-users")
-            .then(response=>{
-                var client=response.data.find((item)=>item.UserName===user.UserName);
-                if(client){
-                    if(client.Password===user.Password){
-                        setCookie("username",user.UserName);
-                        navigate("/user-recipe-page");
-                        
-
+            if(user.UserName==""||user.Password==""){
+                alert("Please provide all fields");
+            }else{
+                setLoading("Loading...Please Wait...");
+                axios.get("https://recipe-application-a5j5.onrender.com/get-users")
+                .then(response=>{
+                    setLoading("");
+                    var client=response.data.find((item)=>item.UserName===user.UserName);
+                    if(client){
+                        if(client.Password===user.Password){
+                            setCookie("username",user.UserName);
+                            navigate("/user-recipe-page");
+                            
+    
+                        }else{
+                            alert("Invalid Password");
+                        }
                     }else{
-                        alert("Invalid Password");
+                        alert("Invalid UserName");
                     }
-                }else{
-                    alert("Invalid UserName");
-                }
-            })
+                })
+            }
+
 
         }
 
     })
     return(
         <div id="background">
+            
            <div className="d-flex justify-content-center align-items-center " style={{height:"100vh"}}>
-           <form onSubmit={formik.handleSubmit} className="bg-light p-3 rounded-3 w-25">
+          <form onSubmit={formik.handleSubmit} className="bg-light p-3 rounded-3 " id="container-width">
+          <div id="loginuser-loading">{loading}</div>
                 <h3 id="login-title">User Login</h3>
                 <dl className="my-4">
                     <dd className="my-3"><input type="text" name="UserName" className="form-control" placeholder="Enter User Name" onChange={formik.handleChange}/></dd>
@@ -51,7 +62,7 @@ export function UserLogin(){
                     <Link to={"/user-register"} >NewUser Register</Link>
                 </div>
             </form>
+          </div>
            </div>
-        </div>
     )
 }

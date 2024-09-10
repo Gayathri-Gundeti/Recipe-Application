@@ -2,9 +2,10 @@ import { useFormik } from "formik"
 import "./add-recipe.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useState } from "react";
 
 export function AddRecipe() {
-
+    const[loading,setLoading]=useState();
     let navigate = useNavigate();
     const formik = useFormik({
         initialValues: {
@@ -16,6 +17,10 @@ export function AddRecipe() {
             photoUrl: null
         },
         onSubmit: (values) => {
+            if(values.id==""||values.title==""||values.course==""||values.ingredients==""||values.directions==""||values.photoUrl==""){
+                alert("Please provide all the fields");
+            }else{
+                setLoading("Loading...Please Wait...");
             const formData = new FormData();
             formData.append("id", values.id);
             formData.append("title", values.title);
@@ -24,18 +29,21 @@ export function AddRecipe() {
             formData.append("directions", values.directions);
             formData.append("photoUrl", values.photoUrl);  // Ensure the file is appended correctly
         
-            axios.post("http://127.0.0.1:2233/send", formData, {
+            axios.post("https://recipe-application-a5j5.onrender.com/send", formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },
             })
             .then(() => {
+                setLoading("");
                 alert("Recipe added");
                 navigate("/admin-recipe-page");
+
             })
             .catch((error) => {
                 console.log("Error", error);
             });
+            }
         }
 
       
@@ -49,6 +57,7 @@ export function AddRecipe() {
         <div id="background">
             <div className="d-flex justify-content-center align-items-center" style={{ height: "100vh" }}>
                 <form className="bg-light p-3 rounded-3 w-25" onSubmit={formik.handleSubmit}>
+                <div id="loginuser-loading">{loading}</div>
                     <dl>
                         <h3 className="text-center " id="add-title">Add Recipe</h3>
                         <dd><input type="number" placeholder="Enter Id" className="form-control" name="id" onChange={formik.handleChange} /></dd>

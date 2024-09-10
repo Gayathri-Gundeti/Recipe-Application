@@ -1,19 +1,98 @@
+#header-right button{
+    margin-left: 10px;
+}
 #cards-section{
     display: flex;
     flex-wrap: wrap;
+    margin: 0px 30px;
+}
+#title-recipe{
+    margin-top: 100px ;
 }
 #btnAddRecipe{
-    border: 1px solid rgba(48,181,59,1);
-    color: rgba(48,181,59,1);
+    background-color: orange;
+    color: white;
 }
-#btnAddRecipe:hover{
-    background-color: rgb(3, 147, 15);
-    color: #FDD365;
+#btnDelete{
+    border: 1px solid orange;
+    color: orange
+}
+#btnDelete:hover{
+    background-color: orange;
+    color: white;
+    transform: scale(1.05);
+}
+#btnViewmore{
+    background-color: orange;
+    color: white;
+}
+#btnViewmore:hover{
+    transform: scale(1.05);
 }
 #admin-card{
     width: 250px;
 }
 .bi-person-circle{
-    color: rgba(48,181,59,1);
+    color: orange;
     font-size: 22px;
+}
+@media screen and (max-width:992px){
+    #admin-card{
+        width: 200px;
+    }
+    #btnViewmore{
+        font-size: 10px;
+
+    }
+    #btnDelete{
+        font-size: 10px;
+
+    }
+
+}
+@media screen and (max-width:768px){
+    #admin-card{
+        width: 200px;
+    }
+    #btnViewmore{
+        font-size: 10px;
+
+    }
+    #btnDelete{
+        font-size: 10px;
+
+    }
+
+}
+@media screen and (max-width:399px){
+    header h3{
+        font-size: 15px;
+    }
+    #header-right span{
+        font-size: 10px;
+    }
+    #header-right button{
+        font-size: 9px;
+        padding: 1px;
+        margin-left: 5px;
+    }
+    #cards-section{
+        display: flex;
+        flex-wrap: wrap;
+        margin:auto;
+    }
+
+    #admin-card{
+        width: 150px;
+    }
+    #btnViewmore{
+        font-size: 10px;
+        padding: 3px;
+
+    }
+    #btnDelete{
+        font-size: 10px;
+        padding: 3px;
+
+    }
 }

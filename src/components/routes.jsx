@@ -10,6 +10,7 @@ import { AdminRecipe } from "./Admin-Recipe-Page/admin-recipe-page";
 import { AdminLogin } from "./Admin-Login/admin-login";
 import { AdminRegister } from "./Admin-Register/admin-register";
 
+
 export function RoutePage(){
     return(
         <div>
@@ -29,6 +30,7 @@ export function RoutePage(){
                 <Route path="*" element={<h3>Page Not Found</h3>}></Route>
             </Routes>
             </BrowserRouter>
+            
         </div>
     )
 }

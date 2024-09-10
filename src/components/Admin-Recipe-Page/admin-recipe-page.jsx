@@ -3,13 +3,17 @@ import { useCookies } from "react-cookie";
 import { Link, useNavigate } from "react-router-dom"
 import axios from "axios";
 import "./admin-recipe-page.css";
+import { Footer } from "../Footer/footer";
 export function AdminRecipe(){
     const[data,setData]=useState([]);
+    const[loading,setLoading]=useState("");
     let navigate=useNavigate();
     const[cookie,setCookie,removeCookie]=useCookies(["adminname"]);
     function LoadCards(){
-        axios.get("http://127.0.0.1:2233/get")
+        setLoading("Loading...Please Wait..");
+        axios.get("https://recipe-application-a5j5.onrender.com/get")
         .then(response=>{
+            setLoading("");
             setData(response.data);
         })
         
@@ -19,11 +23,18 @@ export function AdminRecipe(){
         navigate("/");
     }
     function handleDelete(e){
-        axios.delete(`http://127.0.0.1:2233/delete-recipe/${e.target.value}`)
+        var flag=window.confirm("Are you sure? \n Want to delete?");
+        if(flag==true){
+            axios.delete(`https://recipe-application-a5j5.onrender.com/delete-recipe/${e.target.value}`)
         .then(()=>{
          alert("Deleted Successfully...");
          LoadCards();
         })
+
+        }else{
+            LoadCards();
+        }
+        
     }
 
     useEffect(()=>{
@@ -31,20 +42,24 @@ export function AdminRecipe(){
     },[])
     return(
         <div>
-              <header className="bg-light p-3  d-flex justify-content-between">
+              <header className="bg-light p-4  d-flex justify-content-around">
                 <div>
                 <h3>Admin Page</h3>
                 
                 </div>
-                <div>
+                <div id="header-right">
                 <span className="bi bi-person-circle">&nbsp;Admin:</span><span className="h4">&nbsp;{cookie["adminname"]}</span>
-                <Link to={"/add-recipe"} className="text-decoration-none link-dark px-3"> <button className="btn" id="btnAddRecipe">Add Recipe</button></Link>
+                <Link to={"/add-recipe"} className="text-decoration-none link-dark "> <button className="btn" id="btnAddRecipe">Add Recipe</button></Link>
                 <button className="btn" id="btnlogout" onClick={handleLogout}>Logout</button>
                 </div>
             </header>
+             <div id="title-recipe">
+                <h3 className="fs-2 ms-3">Recipes</h3>
+
+                </div>
+                <div id="loading">{loading}</div>
             <section>
-            <h3 className="m-3 fs-2">Recipes</h3>
-            <div id="cards-section" >
+              <div id="cards-section" >
                         {
                             data.map(card=>
                                 <div className="card" key={card.title} id="admin-card">
@@ -60,15 +75,15 @@ export function AdminRecipe(){
                                         
                                     </div>
                                     <div className="card-footer">
-                                    <Link to={`/view-more-admin/${card.id}`} className="link-light"><button className="btn" id="btn-viewmore">View More</button></Link>
-                                    <button className="btn mx-2" id="btnAddRecipe" value={`${card.id}`} onClick={handleDelete}>Delete</button>
+                                    <Link to={`/view-more-admin/${card.id}`} className="link-light"><button className="btn" id="btnViewmore">View More</button></Link>
+                                    <button className="btn mx-2" id="btnDelete" value={`${card.id}`} onClick={handleDelete}>Delete</button>
                                         </div>
                                 </div>
                             )
                         }
                     </div>
-
             </section>
+            <Footer/>
         </div>
     )
 }

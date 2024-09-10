@@ -1,23 +1,57 @@
 #background{
-    background-image: url("../../../public/images/bg-new.jpg");
+    background-image: url("../../../public/images/background.jpg");
     background-size: cover;
     height: 100vh;
 }
 #app-title{
     font-size: 45px;
-    color: #009B4D;
+    color: orange;
     text-align: center;
     font-family: bodoni bd bt;
 }
 #btns button{
-    /* background: radial-gradient(#FDD365 50% , rgba(48,181,59,1) 100%); */
-    background-color: rgb(3, 147, 15);
-    color: #FDD365;
+    background-color: orange;
+    color: white;
     margin-left: 10px;
     border-radius: 20px;
     font-size: 15px;
     padding: 5px 20px;
 }
+#btns button:hover{
+    transform: scale(1.05);
+}
 #btns{
     text-align: center;
+}
+@media screen and (max-width:992px){
+    #content{
+        background-color: white;
+        padding: 20px;
+        border-radius: 20px;
+        width: 70%;
+     }
+
+}
+@media screen and (max-width:568px){
+    #app-title{
+        font-size: 35px;
+    }
+    #content{
+        background-color: white;
+        padding: 20px;
+        border-radius: 20px;
+     }
+
+}
+
+@media screen and (max-width:399px){
+    #app-title{
+        font-size: 30px;
+    }
+     #content{
+        background-color: white;
+        padding: 20px;
+        border-radius: 20px;
+     }
+
 }
