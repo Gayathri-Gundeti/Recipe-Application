@@ -9,3 +9,6 @@
 #add-title{
     color: orange;
 }
+#textarea{
+    resize: none;
+}

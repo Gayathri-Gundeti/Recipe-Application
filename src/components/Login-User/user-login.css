@@ -1,5 +1,12 @@
+#background{
+    background-image: url("../../../public/images/bg-orange.jpg");
+    background-size: cover;
+}
+form{
+    background-color: white;
+    border: 1px solid orange;
+}
 #login-title{
-    text-align: center;
     color: orange;
 }
 #btnLogin{
@@ -11,8 +18,9 @@
     background-color: orange;
     color: white
 }
-#container-width{
-    width: 30%;
+#container-login-width{
+    width: 400px;
+    height: 350px;
 }
 #loginuser-loading{
     font-size: 18px;
@@ -22,22 +30,22 @@
 }
 
 @media screen and (max-width:992px){
-    #container-width{
-        width: 50%;
-    }
-}
-@media screen and (max-width:768px){
-    #container-width{
+    #container-login-width{
         width: 60%;
     }
 }
+@media screen and (max-width:768px){
+    #container-login-width{
+        width: 70%;
+    }
+}
 @media screen and (max-width:568px){
-    #container-width{
-        width: 80%;
+    #container-login-width{
+        width: 90%;
     }
 }
 @media screen and (max-width:399px){
-    #container-width{
-        width: 80%;
+    #container-login-width{
+        width: 90%;
     }
 }

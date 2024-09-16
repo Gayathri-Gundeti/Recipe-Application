@@ -8,7 +8,7 @@ import {AddRecipe} from "./Add-Recipe/add-recipe"
 import { UserRegister } from "./Register-User/user-register";
 import { AdminRecipe } from "./Admin-Recipe-Page/admin-recipe-page";
 import { AdminLogin } from "./Admin-Login/admin-login";
-import { AdminRegister } from "./Admin-Register/admin-register";
+import { AdminRegister } from "../Admin-Register/admin-register";
 
 
 export function RoutePage(){

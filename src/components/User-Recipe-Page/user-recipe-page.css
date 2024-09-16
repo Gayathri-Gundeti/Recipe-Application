@@ -8,11 +8,16 @@ header {
     z-index: 1000;  
     width: 100%;
     height: 70px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
 }
+
 
 header h3{
     color: orange;
-    font-family: monotype corsiva;
+    /* font-family: monotype corsiva; */
+    font-family: brush script mt;
     font-size: 35px;
     
 }
@@ -23,26 +28,16 @@ header h3{
 #btnlogout:hover{
     transform: scale(1.05);
 }
-
-#recipe-section{
-    width: 100%;
-    margin: 20px 20px;
-    
-}
-/* use card-space for getting unwanted space on home click in nav */
-#card-space{
-    width: 100%;
-    margin: 20px 20px; 
-
-}
-#search-section{
-    width: 93%;
-}
- 
-#title-user{
-    color:orange;
+#mobile-section{
+    display: flex;
+    flex-direction: row;
 }
 
+.bi-house-fill{
+    margin-right: 25px;
+    font-size: 25px;
+    color: orange;
+}
 
 #btn-viewmore{
     background-color: orange;
@@ -54,6 +49,9 @@ header h3{
 #cards-section{
     display: flex;
     flex-wrap: wrap;
+}
+#search-section{
+   margin: 20px 50px;
 }
 .card{
     width: 200px;
@@ -122,55 +120,48 @@ header h3{
 
 }
 @media  screen and (max-width:568px){
-    
-    header h3{
-        margin-right: 80px;
-        
+    #mobile-section{
+        display: flex;
+        flex-direction: column;
     }
+ 
+
   
 }
 @media  screen and (max-width:399px){
+    header{
+        display: flex;
+        justify-content: space-around;
+    }
     
     header h3{
-        color: orange;
-        font-family: monotype corsiva;
-        font-size: 20px;
+        font-size: 20px !important;
         
     }
+    #mobile-section{
+        display: flex;
+        flex-direction: column;
+    }
     #title-user{
-        font-size: 15px;
+        font-size: 13px;
+    }
+    .bi-house-fill{
+        margin-right: 25px;
+        margin-top: 20px;
+        font-size: 25px;
+        color: orange;
     }
     h3 img{
         width: 30px;
         height: 30px;
     }
-    #btnlogout{
-        background-color: orange;
-        color: white;
-        font-size: 10px;
-        padding: 5px;
-    }
+   
     #cards-section{
         display: flex;
         flex-wrap: wrap;
         width: 100%;
         margin: auto;
-        margin-left: -25px;
     }
-    #search-results{
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-        margin: auto;
-        margin-left: -25px;
-    
-    }
-    #search-section{
-        width: 100%;
-        margin: auto;
-        margin-left: -10px;
-    }
-
     .card{
         width: 150px;
         height: 120px  ;
@@ -184,18 +175,15 @@ header h3{
         height: 120px;
         overflow: auto;
     }
-    .dropdown-toggle{
-        background-color: orange !important;
-        color: white !important;
-        width: 60px;
-        margin-left: -10px;
+    #search-section{
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+     }
+    .carousel img {
+        height: 150px; /* Smaller carousel image height */
     }
-    .dropdown-item{
-        background-color: orange !important;
-        color: white !important;
-        margin-bottom:5px;
-    
-    }
+   
     #loading{
         font-size: 18px;
         margin-left: -50px;

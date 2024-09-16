@@ -3,13 +3,17 @@
 }
 
 #box-setting{
-    width: 50%;
+    width: 60%;
     margin: auto;
-    margin-top: 20px;
+    height: 100vh;
+    overflow: auto;
+    margin: auto;
+    margin-top: 50px;
     margin-bottom: 20px;
     background-color: whitesmoke;
     padding: 20px;
     border-radius: 20px;
+
 }
 #btn-back{
     background-color: orange;

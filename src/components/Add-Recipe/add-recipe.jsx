@@ -20,6 +20,20 @@ export function AddRecipe() {
             if(values.id==""||values.title==""||values.course==""||values.ingredients==""||values.directions==""||values.photoUrl==""){
                 alert("Please provide all the fields");
             }else{
+                VerifyId(values);
+            } 
+           
+        }   
+    });
+   function VerifyId(values){
+    axios.get("https://recipe-application-2.onrender.com/get-users")
+    .then(response=>{
+        const userid=response.data;
+        var Id=userid.find(item=>item.id==values.id);
+        if(Id){
+            alert("Id is taken...Use another")
+        }else{
+            {
                 setLoading("Loading...Please Wait...");
             const formData = new FormData();
             formData.append("id", values.id);
@@ -29,7 +43,7 @@ export function AddRecipe() {
             formData.append("directions", values.directions);
             formData.append("photoUrl", values.photoUrl);  // Ensure the file is appended correctly
         
-            axios.post("https://recipe-application-a5j5.onrender.com/send", formData, {
+            axios.post("https://recipe-application-2.onrender.com/send", formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },
@@ -45,26 +59,23 @@ export function AddRecipe() {
             });
             }
         }
-
-      
-        
-
-        
-    });
+    })
+   }
+ 
      
 
     return (
         <div id="background">
             <div className="d-flex justify-content-center align-items-center" style={{ height: "100vh" }}>
-                <form className="bg-light p-3 rounded-3 w-25" onSubmit={formik.handleSubmit}>
+                <form className=" p-3 rounded-3 w-25" onSubmit={formik.handleSubmit}>
                 <div id="loginuser-loading">{loading}</div>
                     <dl>
                         <h3 className="text-center " id="add-title">Add Recipe</h3>
                         <dd><input type="number" placeholder="Enter Id" className="form-control" name="id" onChange={formik.handleChange} /></dd>
                         <dd><input type="text" placeholder="Enter Title" className="form-control" name="title" onChange={formik.handleChange} /></dd>
                         <dd><input type="text" placeholder="Enter Course" className="form-control" name="course" onChange={formik.handleChange} /></dd>
-                        <dd><input type="text" placeholder="Enter Ingredients" className="form-control" name="ingredients" onChange={formik.handleChange} /></dd>
-                        <dd><input type="text" placeholder="Enter directions" className="form-control" name="directions" onChange={formik.handleChange} /></dd>
+                        <dd><textarea id="textarea" placeholder="Enter Ingredients" className="form-control" name="ingredients" onChange={formik.handleChange} /></dd>
+                        <dd><textarea id="textarea" placeholder="Enter directions" className="form-control" name="directions" onChange={formik.handleChange} /></dd>
                         <dd><input type="file" className="form-control" name="photoUrl" onChange={(event) => formik.setFieldValue("photoUrl", event.currentTarget.files[0])} /></dd>
                     </dl>
                     <button type="submit" className="btn w-100" id="btnSubmit">Submit</button>

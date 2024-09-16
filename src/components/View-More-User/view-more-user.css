@@ -1,9 +1,10 @@
 #box-setting{
-    width: 50%;
+    width: 60%;
+    margin: auto;
     height: 100vh;
     overflow: auto;
     margin: auto;
-    margin-top: 80px;
+    margin-top: 50px;
     margin-bottom: 20px;
     background-color: whitesmoke;
     padding: 20px;
@@ -19,6 +20,9 @@
     
     
 }
+#recipe-title{
+    color:orange;
+}
 @media screen and (max-width:992px){
     #box-setting{
         width: 80%;
@@ -30,16 +34,28 @@
         width: 85%;
         height: 80vh;
     }
+    #recipe-title{
+        margin-top: 20px;
+
+    }
 }
 @media  screen and (max-width:568px){
     #box-setting{
         width: 90%;
         height: 75vh;
     }
+    #recipe-title{
+        margin-top: 20px;
+
+    }
     
 }
 @media screen and (max-width:399px){
     #box-setting{
         width: 95%;
+    }
+    #recipe-title{
+        margin-top: 20px;
+
     }
 }

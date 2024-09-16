@@ -5,7 +5,6 @@ import "./view-more-user.css";
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom"
 import { useCookies } from "react-cookie";
-import recipeIcon from "../../assets/icon.png";
 import { Footer } from "../Footer/footer";
 
 export function ViewMoreUser(){
@@ -17,7 +16,7 @@ export function ViewMoreUser(){
     
     function LoadMore(){
         setLoading("Loading...Please wait..")
-        axios.get(`https://recipe-application-a5j5.onrender.com/get-id/${params.id}`)
+        axios.get(`https://recipe-application-2.onrender.com/get-id/${params.id}`)
         .then(response=>{
             setData(response.data);
             setLoading("");
@@ -33,15 +32,15 @@ export function ViewMoreUser(){
     },[])
     return(
         <div>
-            <header className="bg-light p-3  d-flex justify-content-between">
+           <header className="bg-light">
         <div>
 
           <h3>
-            <img src={recipeIcon} height="50px" width="70px" />RecipeGuide</h3>
+            <img src="../../../images/icon.png" height="50px" width="70px" />RecipeGuide</h3>
         </div>
         <div>
-          <span className="h4 me-2 bi bi-person-circle" id="title-user">&nbsp;User:</span><span className="h4 me-4">{cookies["username"]}</span>
-          <button className="btn" id="btnlogout" onClick={handleLogout}>Logout</button>
+          <span className="h4 me-2 bi bi-person-circle" style={{color:"orange"}}></span><span className="h4 me-4" id="title-user">{cookies["username"]}</span>
+          <button title="Logout" id="btnlogout" onClick={handleLogout} className="btn bi bi-door-closed-fill"></button>
         </div>
       </header>
             

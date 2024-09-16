@@ -19,7 +19,7 @@ export function UserLogin(){
                 alert("Please provide all fields");
             }else{
                 setLoading("Loading...Please Wait...");
-                axios.get("https://recipe-application-a5j5.onrender.com/get-users")
+                axios.get("https://recipe-application-2.onrender.com/get-users")
                 .then(response=>{
                     setLoading("");
                     var client=response.data.find((item)=>item.UserName===user.UserName);
@@ -46,19 +46,20 @@ export function UserLogin(){
         <div id="background">
             
            <div className="d-flex justify-content-center align-items-center " style={{height:"100vh"}}>
-          <form onSubmit={formik.handleSubmit} className="bg-light p-3 rounded-3 " id="container-width">
+          <form onSubmit={formik.handleSubmit} className=" p-3 rounded-3 " id="container-login-width">
           <div id="loginuser-loading">{loading}</div>
                 <h3 id="login-title">User Login</h3>
                 <dl className="my-4">
-                    <dd className="my-3"><input type="text" name="UserName" className="form-control" placeholder="Enter User Name" onChange={formik.handleChange}/></dd>
+                    <dd className="my-3">
+                        <input type="text" name="UserName" className="form-control" placeholder="Enter User Name" onChange={formik.handleChange}/></dd>
                     <dd><input type="password" name="Password" className="form-control" placeholder="Enter Password" onChange={formik.handleChange}/></dd>
                     
                 </dl>
-                <div className="text-center">
-                <button className="btn me-2" id="btnLogin">Login</button>
-                <Link to={"/"}><button id="btnCancel" className="btn">Cancel</button></Link>
+                <div >
+                <button className="btn me-2 w-25" id="btnLogin">Login</button>
+                <Link to={"/"}><button id="btnCancel" className="btn w-25">Cancel</button></Link>
                 </div>
-                <div className="my-3 text-center">
+                <div className="my-3 ">
                     <Link to={"/user-register"} >NewUser Register</Link>
                 </div>
             </form>

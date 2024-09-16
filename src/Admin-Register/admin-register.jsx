@@ -17,7 +17,7 @@ export function AdminRegister(){
             alert("Please Provide all the fields");
           }else{
             setLoading("Loading...Please Wait...");
-            axios.post("https://recipe-application-a5j5.onrender.com/register-admin",admin)
+            axios.post("http://127.0.0.1:2233/register-admin",admin)
             .then(()=>{
                 setLoading("");
                 alert("Registered Successfully...");

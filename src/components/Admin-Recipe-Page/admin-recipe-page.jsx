@@ -11,7 +11,7 @@ export function AdminRecipe(){
     const[cookie,setCookie,removeCookie]=useCookies(["adminname"]);
     function LoadCards(){
         setLoading("Loading...Please Wait..");
-        axios.get("https://recipe-application-a5j5.onrender.com/get")
+        axios.get("https://recipe-application-2.onrender.com/get")
         .then(response=>{
             setLoading("");
             setData(response.data);
@@ -25,7 +25,7 @@ export function AdminRecipe(){
     function handleDelete(e){
         var flag=window.confirm("Are you sure? \n Want to delete?");
         if(flag==true){
-            axios.delete(`https://recipe-application-a5j5.onrender.com/delete-recipe/${e.target.value}`)
+            axios.delete(`https://recipe-application-2.onrender.com/delete-recipe/${e.target.value}`)
         .then(()=>{
          alert("Deleted Successfully...");
          LoadCards();
@@ -42,7 +42,7 @@ export function AdminRecipe(){
     },[])
     return(
         <div>
-              <header className="bg-light p-4  d-flex justify-content-around">
+              <header className="bg-light p-4  d-flex justify-content-between">
                 <div>
                 <h3>Admin Page</h3>
                 

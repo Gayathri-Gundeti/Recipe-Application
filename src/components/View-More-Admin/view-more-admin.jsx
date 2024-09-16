@@ -15,7 +15,7 @@ export function ViewMoreAdmin(){
     
     function LoadMore(){
         setLoading("Loading...Please wait...")
-        axios.get(`https://recipe-application-a5j5.onrender.com/get-id/${params.id}`)
+        axios.get(`https://recipe-application-2.onrender.com/get-id/${params.id}`)
         .then(response=>{
             setData(response.data);
             setLoading("");
@@ -30,8 +30,8 @@ export function ViewMoreAdmin(){
         LoadMore();
     },[])
     return(
-        <div>
-                 <header className="bg-light p-4  d-flex justify-content-around">
+        <div id="background">
+                 <header className="bg-light p-4  d-flex justify-content-between">
                 <div>
                 <h3>Admin Page</h3>
                 
@@ -46,7 +46,7 @@ export function ViewMoreAdmin(){
            <div id="view-more-loading">{loading}</div>
             {
                 data.map(item=><dl key={item.id}>
-                    <dd><img src={item.photoUrl} height="200" width="50%"/></dd>
+                    <dd><img src={item.photoUrl} height="200" width="30%"/></dd>
                     <dd><h2 id="recipe-title">{item.title}</h2></dd>
                     <dt>Course:</dt>
                     <dd>{item.course}</dd>

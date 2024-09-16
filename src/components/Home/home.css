@@ -1,57 +1,117 @@
-#background{
-    background-image: url("../../../public/images/background.jpg");
+#home-background{
+    background-image: url("../../../public/images/bg-orange.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-#app-title{
+
+#cover-bg{
+    background-image: url("../../../public/images/down-bg-2.jpg");
+    background-size: cover;
+    width: 800px;
+    height: 500px;
+    box-shadow: 2px 2px 18px rgb(240, 144, 10);
+    border-radius: 20px;
+}
+#home-title{
     font-size: 45px;
-    color: orange;
-    text-align: center;
-    font-family: bodoni bd bt;
+    
 }
-#btns button{
+#btnAdmin{
     background-color: orange;
     color: white;
-    margin-left: 10px;
-    border-radius: 20px;
-    font-size: 15px;
-    padding: 5px 20px;
+
 }
-#btns button:hover{
+#btnAdmin:hover{
     transform: scale(1.05);
 }
-#btns{
-    text-align: center;
-}
-@media screen and (max-width:992px){
-    #content{
-        background-color: white;
-        padding: 20px;
-        border-radius: 20px;
-        width: 70%;
-     }
 
+#cover-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+}
+#recipe-title{
+    color: orange;
+    font-size: 50px;
+    font-family: baskerville old face;
+
+}
+#recipe-subtitle{
+    width: 520px;
+    font-size: 15px;
+    font-family: cooper black;
+    color: gray;
+
+}
+#btnlet{
+    background-color: orange;
+    color: white;
+}
+#btnlet:hover{
+    transform: scale(1.05);
+}
+@media screen and (max-width:768px){
+    #cover-bg{
+        background-image: url("../../../public/images/down-bg-2.jpg");
+        background-size: cover;
+        width: 600px;
+        height: 500px;
+    }
+    #recipe-title{
+        color: orange;
+        font-size: 35px;
+        margin-top: -40px;
+    
+    }
+    #recipe-subtitle{
+        width: 300px;
+        font-size: 15px;
+    
+    }
 }
 @media screen and (max-width:568px){
-    #app-title{
+    #cover-bg{
+        background-image: url("../../../public/images/down-bg-2.jpg");
+        background-size: cover;
+        width: 400px;
+        height: 500px;
+    }
+    #recipe-title{
+        color: orange;
         font-size: 35px;
+        margin-top: -40px;
+    
     }
-    #content{
-        background-color: white;
-        padding: 20px;
-        border-radius: 20px;
-     }
-
+    #recipe-subtitle{
+        width: 300px;
+        font-size: 12px;
+    
+    }
 }
-
 @media screen and (max-width:399px){
-    #app-title{
-        font-size: 30px;
-    }
-     #content{
-        background-color: white;
-        padding: 20px;
-        border-radius: 20px;
-     }
 
+    #cover-bg{
+        background-image: url("../../../public/images/down-bg-2.jpg");
+        background-size: cover;
+        width: 300px;
+        height: 400px;
+    }
+    
+    #recipe-title{
+        color: orange;
+        font-size: 25px;
+        margin-top: -50px;
+    
+    }
+    #recipe-subtitle{
+        width: 250px;
+        font-size: 11px;
+    
+    }
 }
